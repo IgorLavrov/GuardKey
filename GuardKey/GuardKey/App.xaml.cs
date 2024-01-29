@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GuardKey.Views;
+using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,8 +11,16 @@ namespace GuardKey
         public App()
         {
             InitializeComponent();
+            var pin = Preferences.Get("UserPIN", "");
+            if (string.IsNullOrEmpty(pin))
+            {
 
-            MainPage = new MainPage();
+                MainPage = new NavigationPage(new RegistrarionPage());
+            }
+            else
+            {
+                MainPage = new NavigationPage(new Login());
+            }
         }
 
         protected override void OnStart()

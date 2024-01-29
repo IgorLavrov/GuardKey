@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GuardKey.Views.Login">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Login" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Entry x:Name="Digit1" Placeholder="*" MaxLength="1" Keyboard="Numeric" IsPassword="true" WidthRequest="40" />
+            <Entry x:Name="Digit2" Placeholder="*" MaxLength="1" Keyboard="Numeric" IsPassword="true" WidthRequest="40" />
+            <Entry x:Name="Digit3" Placeholder="*" MaxLength="1" Keyboard="Numeric" IsPassword="true" WidthRequest="40" />
+            <Entry x:Name="Digit4" Placeholder="*" MaxLength="1" Keyboard="Numeric" IsPassword="true" WidthRequest="40" />
+        </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
