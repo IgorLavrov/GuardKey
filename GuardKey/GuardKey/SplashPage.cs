@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GuardKey.Views;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
@@ -37,7 +38,7 @@ namespace GuardKey
             await SplashImage.ScaleTo(1, 2000);
             await SplashImage.ScaleTo(0.6, 1300, Easing.Linear);
             await SplashImage.ScaleTo(1.7, 2000, Easing.Linear);
-            Application.Current.MainPage = new NavigationPage(new MainPage());
+            Application.Current.MainPage = new NavigationPage(new IndexUserRecordListPage());
 
         }
 

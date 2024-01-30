@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -32,12 +33,14 @@ namespace GuardKey.Views
                 nextEntry.Focus();
         }
 
+
+
         private void HandlePinEntryComplete()
         {
             string pin = $"{Digit1.Text}{Digit2.Text}{Digit3.Text}{Digit4.Text}";
 
-            // Save PIN to preferences
-            var correctpin= Preferences.Get("UserPIN", "");
+
+            var correctpin = Preferences.Get("UserPIN", "");
 
             if (pin == correctpin)
             {
@@ -46,10 +49,23 @@ namespace GuardKey.Views
             }
             else
             {
-                // Perform any additional logic with the entered PIN (e.g., authentication)
-                DisplayAlert("PIN  is incorrect ", $"You incorrect PIN: {pin}", "OK");
+
+                DisplayAlert("Incorrect PIN", $"You entered an incorrect PIN: {pin}", "OK");
+                Application.Current.MainPage = new NavigationPage(new Login());
+                Digit1.Focus();
+
+
+
+
+
+
+
             }
+
+
+
         }
 
     }
+
 }
