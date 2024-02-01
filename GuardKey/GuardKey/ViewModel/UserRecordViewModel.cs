@@ -43,7 +43,7 @@ namespace GuardKey.ViewModel
                 if (Account.SourceGroupName != value)
                 {
                     Account.SourceGroupName = value;
-                    OnPropertyChanged("SourseName");
+                    OnPropertyChanged("SourceGroupName");
                 }
             }
         }
@@ -56,7 +56,7 @@ namespace GuardKey.ViewModel
                 if (Account.ResourceName != value)
                 {
                     Account.ResourceName = value;
-                    OnPropertyChanged("ResourceName ");
+                    OnPropertyChanged("ResourceName");
                 }
             }
         }

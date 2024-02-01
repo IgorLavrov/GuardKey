@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GuardKey.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,14 +18,23 @@ namespace GuardKey.Views
             InitializeComponent();
         }
 
-        private void accounList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        protected override void OnAppearing()
         {
-            throw new NotImplementedException();
+            accounList.ItemsSource = App.Database.GetItems();
+            base.OnAppearing();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void accounList_ItemSelectedAsync(object sender, SelectedItemChangedEventArgs e)
         {
-
+            UserRecord selectedAccount = (UserRecord)e.SelectedItem;
+            IndexUserRecordListPage UserRecordPage = new IndexUserRecordListPage();
+            UserRecordPage.BindingContext = selectedAccount;
+            await Navigation.PushAsync(UserRecordPage);
         }
+
+        //private void Button_Clicked(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }

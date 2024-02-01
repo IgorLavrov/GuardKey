@@ -18,8 +18,13 @@ namespace GuardKey.Views
         public UserRecordPage(UserRecordViewModel vm)
         {
             InitializeComponent();
+
             ViewModel = vm;
+
+            ViewModel.ListViewModel = new UserRecordListViewModel();
+
             this.BindingContext = ViewModel;
         }
+
     }
 }

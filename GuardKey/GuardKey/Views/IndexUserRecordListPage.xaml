@@ -7,7 +7,7 @@
              <!--Style="{StaticResource AppBackground}"-->
     
     <StackLayout>
-        <ListView x:Name="accounList" ItemsSource="{Binding}" ItemSelected="accounList_ItemSelected">
+        <ListView x:Name="accounList" ItemsSource="{Binding}" ItemSelected="accounList_ItemSelectedAsync">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -27,7 +27,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="Добавить"
+        <!--<Button Text="Добавить"
                 Clicked="Button_Clicked" 
                 TextColor="#c9f8a9"
                 FontSize="17"
@@ -37,6 +37,6 @@
                 BorderColor="#83a78f"
                 WidthRequest="180"
                 HeightRequest="50"
-                Margin="40,0,40,20"/>
+                Margin="40,0,40,20"/>-->
     </StackLayout>
 </ContentPage>
