@@ -80,15 +80,13 @@ namespace GuardKey
         }
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            var userRecordViewModel = new UserRecordViewModel(); 
 
-            var userRecordPage = new UserRecordPage(userRecordViewModel);
 
-            Application.Current.MainPage = new NavigationPage(userRecordPage);
+            await Navigation.PushAsync(new AddUserRecordPage());
         }
         private async void Button_Get_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new IndexUserRecordListPage());
+            await Navigation.PushAsync(new UserRecordPage());
         }
         private async void Button_Edit_Clicked(object sender, EventArgs e)
         {

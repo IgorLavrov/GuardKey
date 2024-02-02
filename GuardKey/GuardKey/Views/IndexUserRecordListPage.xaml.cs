@@ -20,7 +20,7 @@ namespace GuardKey.Views
 
         protected override void OnAppearing()
         {
-            accounList.ItemsSource = App.Database.GetItems();
+            accounList.ItemsSource = (System.Collections.IEnumerable)App.Database.GetUserRecordsAsync();
             base.OnAppearing();
         }
 

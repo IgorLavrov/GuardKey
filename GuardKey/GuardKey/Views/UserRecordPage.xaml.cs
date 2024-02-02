@@ -14,17 +14,23 @@ namespace GuardKey.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserRecordPage : ContentPage
     {
-        public UserRecordViewModel ViewModel { get; set; }
-        public UserRecordPage(UserRecordViewModel vm)
+        public UserRecordViewModel userRecordViewModel { get; set; }
+        public UserRecordPage()
         {
             InitializeComponent();
 
-            ViewModel = vm;
 
-            ViewModel.ListViewModel = new UserRecordListViewModel();
+            //ViewModel.ListViewModel = new UserRecordListViewModel();
 
-            this.BindingContext = ViewModel;
+           BindingContext = userRecordViewModel=new  UserRecordViewModel();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            userRecordViewModel.OnAppearing();
+        }
+
 
     }
 }

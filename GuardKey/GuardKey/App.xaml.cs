@@ -1,4 +1,4 @@
-﻿using GuardKey.Models;
+﻿using GuardKey.Services;
 using GuardKey.Views;
 using System;
 using System.IO;
@@ -10,17 +10,17 @@ namespace GuardKey
 {
     public partial class App : Application
     {
-        public const string DATABASE_NAME = "userRecord.db";
-        public static UserRecordRepository database;
-        public static UserRecordRepository Database
+        public const string DATABASE_NAME = "record.db";
+        public static UserRecordService _database;
+        public static UserRecordService Database
         {
             get
             {
-                if (database == null)
+                if (_database == null)
                 {
-                    database = new UserRecordRepository(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DATABASE_NAME));
+                    _database = new UserRecordService(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DATABASE_NAME));
                 }
-                return database;
+                return _database;
             }
         }
         public App()

@@ -27,16 +27,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <!--<Button Text="Добавить"
-                Clicked="Button_Clicked" 
-                TextColor="#c9f8a9"
-                FontSize="17"
-                BackgroundColor="#1a2e69"
-                CornerRadius="10"
-                BorderWidth="2"
-                BorderColor="#83a78f"
-                WidthRequest="180"
-                HeightRequest="50"
-                Margin="40,0,40,20"/>-->
+       
     </StackLayout>
 </ContentPage>
